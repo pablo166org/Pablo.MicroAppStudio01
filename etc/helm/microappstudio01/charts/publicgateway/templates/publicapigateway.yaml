@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "{{ .Release.Name }}-{{ .Chart.Name }}"
+spec:
+  selector:
+    matchLabels:
+      app: "{{ .Release.Name }}-{{ .Chart.Name }}"
+  template:
+    metadata:
+      labels:
+        app: "{{ .Release.Name }}-{{ .Chart.Name }}"
+    spec:
+      containers:
+      - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: "{{ .Values.image.pullPolicy }}"
+        name: "{{ .Release.Name }}-{{ .Chart.Name }}"
+        ports:
+        - name: "http"
+          containerPort: 80
+        env:
+        - name: "DOTNET_ENVIRONMENT"
+          value: "{{ .Values.global.dotnetEnvironment }}"
+        - name: "ElasticSearch__IsLoggingEnabled"
+          value: "{{ .Values.global.elasticSearch.isLoggingEnabled }}"
+        - name: "ElasticSearch__Url"
+          value: "http://{{ .Release.Name }}-elasticsearch:{{ .Values.global.elasticSearch.port }}"
+        - name: "Swagger__IsEnabled"
+          value: "{{ .Values.swagger.isEnabled }}"
+        - name: "AbpStudioClient__StudioUrl"
+          value: "{{ .Values.global.abpStudioClient.studioUrl }}"
+        - name: "AbpStudioClient__IsLinkEnabled"
+          value: "{{ .Values.global.abpStudioClient.isLinkEnabled }}"
+        - name: "ReverseProxy__Clusters__AuthServer__Destinations__AuthServer__Address"
+          value: "http://{{ .Release.Name }}-authserver"
+        - name: "ReverseProxy__Clusters__Administration__Destinations__Administration__Address"
+          value: "http://{{ .Release.Name }}-administration"

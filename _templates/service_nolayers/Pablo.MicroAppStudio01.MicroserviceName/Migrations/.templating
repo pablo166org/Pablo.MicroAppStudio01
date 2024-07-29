@@ -1,0 +1,5 @@
+{{~
+  if config.database_provider != "ef"
+    helpers.delete_this_directory
+  end
+~}}

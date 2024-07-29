@@ -1,0 +1,7 @@
+{
+  "packages": {
+    "Pablo.MicroAppStudio01.PublicGateway": {
+      "path": "Pablo.MicroAppStudio01.PublicGateway/Pablo.MicroAppStudio01.PublicGateway.abppkg"
+    }
+  }
+}

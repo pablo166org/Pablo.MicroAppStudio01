@@ -1,0 +1,6 @@
+apiVersion: v2
+name: webgateway
+appVersion: "1.0"
+description: MicroAppStudio01 Web API Gateway
+version: 1.0.0
+type: application

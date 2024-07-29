@@ -1,0 +1,39 @@
+{
+  "packages": {
+    "Pablo.MicroAppStudio01.AuditLoggingService": {
+      "path": "Pablo.MicroAppStudio01.AuditLoggingService/Pablo.MicroAppStudio01.AuditLoggingService.abppkg"
+    },
+    "Pablo.MicroAppStudio01.AuditLoggingService.Contracts": {
+      "path": "Pablo.MicroAppStudio01.AuditLoggingService.Contracts/Pablo.MicroAppStudio01.AuditLoggingService.Contracts.abppkg"
+    },
+    "Pablo.MicroAppStudio01.AuditLoggingService.Tests": {
+      "path": "Pablo.MicroAppStudio01.AuditLoggingService.Tests/Pablo.MicroAppStudio01.AuditLoggingService.Tests.abppkg"
+    }
+  },
+  "imports": {
+    "Volo.Abp.PermissionManagement": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.FeatureManagement": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.SettingManagement": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Saas": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.BlobStoring.Database": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.LanguageManagement": {
+      "version": "8.2.0",
+      "isInstalled": true
+    }
+  }
+}

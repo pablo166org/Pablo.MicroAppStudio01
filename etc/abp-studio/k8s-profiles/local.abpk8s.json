@@ -1,0 +1,15 @@
+{
+  "config": {
+    "context": "docker-desktop",
+    "namespace": "microappstudio01-local"
+  },
+  "metadata": {
+    "dotnetEnvironment": "Staging"
+  },
+  "services": {
+    "microappstudio01-local-identity": {
+    },
+    "microappstudio01-local-web": {
+    }
+  }
+}

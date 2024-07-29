@@ -1,0 +1,10 @@
+{
+  "culture": "en",
+  "texts": {
+    "Menu:HomePage": "Home",
+    "Menu:ArticleSample": "Article Sample",
+    "Menu:ContactUs": "Contact Us",
+    "Login": "Login",
+    "Menu:Dashboard": "Dashboard"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "packages": {
+    "Pablo.MicroAppStudio01.WebGateway": {
+      "path": "Pablo.MicroAppStudio01.WebGateway/Pablo.MicroAppStudio01.WebGateway.abppkg"
+    }
+  }
+}

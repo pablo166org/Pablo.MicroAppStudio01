@@ -1,0 +1,43 @@
+{
+  "packages": {
+    "Pablo.MicroAppStudio01.FileManagementService": {
+      "path": "Pablo.MicroAppStudio01.FileManagementService/Pablo.MicroAppStudio01.FileManagementService.abppkg"
+    },
+    "Pablo.MicroAppStudio01.FileManagementService.Contracts": {
+      "path": "Pablo.MicroAppStudio01.FileManagementService.Contracts/Pablo.MicroAppStudio01.FileManagementService.Contracts.abppkg"
+    },
+    "Pablo.MicroAppStudio01.FileManagementService.Tests": {
+      "path": "Pablo.MicroAppStudio01.FileManagementService.Tests/Pablo.MicroAppStudio01.FileManagementService.Tests.abppkg"
+    }
+  },
+  "imports": {
+    "Volo.Abp.PermissionManagement": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.FeatureManagement": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.SettingManagement": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.FileManagement": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Saas": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.BlobStoring.Database": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.LanguageManagement": {
+      "version": "8.2.0",
+      "isInstalled": true
+    }
+  }
+}

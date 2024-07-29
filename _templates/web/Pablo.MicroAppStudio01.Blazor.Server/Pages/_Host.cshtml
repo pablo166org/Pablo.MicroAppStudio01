@@ -1,0 +1,51 @@
+﻿@page "/"
+@namespace Pablo.MicroAppStudio01.MicroserviceName.Pages
+@using System.Globalization
+{{~ if config.theme == "basic" ~}}
+@using Volo.Abp.AspNetCore.Components.Server.BasicTheme.Bundling
+@using Volo.Abp.AspNetCore.Components.Web.BasicTheme.Themes.Basic
+{{~ else if config.theme == "leptonx" ~}}
+@using Volo.Abp.AspNetCore.Components.Web.LeptonXTheme.Components
+@using Volo.Abp.AspNetCore.Components.Server.LeptonXTheme.Bundling
+{{~ end ~}}
+@using Volo.Abp.Localization
+@{
+    Layout = null;
+    var rtl = CultureHelper.IsRtl ? "rtl" : string.Empty;
+}
+
+<!DOCTYPE html>
+<html lang="@CultureInfo.CurrentCulture.Name" dir="@rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MicroAppStudio01</title>
+    <base href="~/" />
+    
+{{~ if config.theme == "basic" ~}}
+    <abp-style-bundle name="@BlazorBasicThemeBundles.Styles.Global" />
+{{~ else if config.theme == "leptonx" ~}}
+    <abp-style-bundle name="@BlazorLeptonXThemeBundles.Styles.Global" />
+{{~ end ~}}
+</head>
+<body class="abp-application-layout @rtl">
+    <component type="typeof(App)" render-mode="Server" />
+
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+{{~ if config.theme == "basic" ~}}
+    <abp-script-bundle name="@BlazorBasicThemeBundles.Scripts.Global" />
+{{~ else if config.theme == "leptonx" ~}}
+    <abp-script-bundle name="@BlazorLeptonXThemeBundles.Scripts.Global" />
+{{~ end ~}}
+</body>
+</html>

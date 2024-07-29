@@ -1,0 +1,8 @@
+image:
+  repository: "microappstudio01/identity"
+  tag: "latest"
+  pullPolicy: IfNotPresent
+swagger:
+  isEnabled: "true"
+initialAdminEmailAddress: "admin@abp.io"
+initialAdminPassword: "1q2w3E*"

@@ -1,0 +1,35 @@
+{
+  "packages": {
+    "Pablo.MicroAppStudio01.MicroserviceName": {
+      "path": "Pablo.MicroAppStudio01.MicroserviceName/Pablo.MicroAppStudio01.MicroserviceName.abppkg"
+    },
+    "Pablo.MicroAppStudio01.MicroserviceName.Contracts": {
+      "path": "Pablo.MicroAppStudio01.MicroserviceName.Contracts/Pablo.MicroAppStudio01.MicroserviceName.Contracts.abppkg"
+    },
+    "Pablo.MicroAppStudio01.MicroserviceName.Tests": {
+      "path": "Pablo.MicroAppStudio01.MicroserviceName.Tests/Pablo.MicroAppStudio01.MicroserviceName.Tests.abppkg"
+    }
+  },
+  "imports": {
+    "Volo.Abp.PermissionManagement": {
+      "version": "{{common.abp_framework_version}}",
+      "isInstalled": true
+    },
+    "Volo.Abp.FeatureManagement": {
+      "version": "{{common.abp_framework_version}}",
+      "isInstalled": true
+    },
+    "Volo.Abp.SettingManagement": {
+      "version": "{{common.abp_framework_version}}",
+      "isInstalled": true
+    },
+    "Volo.Abp.BlobStoring.Database": {
+      "version": "{{common.abp_framework_version}}",
+      "isInstalled": true
+    },
+    "Volo.Abp.LanguageManagement": {
+      "version": "{{common.abp_commercial_version}}",
+      "isInstalled": true
+    }
+  }
+}

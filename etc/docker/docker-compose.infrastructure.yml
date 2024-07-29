@@ -1,0 +1,92 @@
+version: '3.7'
+
+volumes:
+  microappstudio01_sqldata:
+  microappstudio01_elasticdata:
+  microappstudio01_rabbitmq:
+networks:
+  microappstudio01:
+    external: true
+
+services:
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3.12.7-management-alpine
+    volumes:
+      - microappstudio01_rabbitmq:/var/lib/rabbitmq
+    networks:
+      - microappstudio01
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+
+  redis:
+    container_name: redis
+    image: redis:7.2.2-alpine
+    networks:
+      - microappstudio01
+    ports:
+      - "6379:6379"
+      
+  elasticsearch:
+    container_name: elasticsearch
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.10.4
+    volumes:
+      - microappstudio01_elasticdata:/usr/share/elasticsearch/data
+    networks:
+      - microappstudio01
+    environment:
+      - xpack.watcher.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - xpack.security.enrollment.enabled=false
+    ports:
+      - "9200:9200"
+      
+  kibana:
+    container_name: kibana
+    image: docker.elastic.co/kibana/kibana:8.10.4
+    depends_on:
+      - elasticsearch
+    networks:
+      - microappstudio01
+    environment:
+      - ELASTICSEARCH_URL=http://host.docker.internal:9200
+    ports: 
+      - "5601:5601"
+  sql-server:
+    container_name: sql-server
+    image: mcr.microsoft.com/azure-sql-edge:1.0.7
+    volumes:
+      - microappstudio01_sqldata:/var/opt/mssql
+      - microappstudio01_sqldata:/var/opt/mssql-extensibility
+      - microappstudio01_sqldata:/var/opt/mssql-extensibility/log
+      - microappstudio01_sqldata:/var/opt/mssql-extensibility/data
+    networks:
+      - microappstudio01
+    ports:
+      - "1434:1433"
+    environment:
+      SA_PASSWORD: "myPassw@rd"
+      ACCEPT_EULA: "Y"
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:10.2.0
+    volumes:
+      - ./grafana/storage:/var/lib/grafana
+    networks:
+      - microappstudio01
+    ports:
+      - "3001:3000"
+      
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus:v2.47.2
+    volumes:
+      - ./prometheus/storage:/prometheus
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - microappstudio01
+    ports:
+      - "9090:9090"

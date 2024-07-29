@@ -1,0 +1,9 @@
+{
+  "config": {
+    "context": "docker-desktop",
+    "namespace": "microappstudio01-prod"
+  },
+  "metadata": {
+    "dotnetEnvironment": "Release"
+  }
+}

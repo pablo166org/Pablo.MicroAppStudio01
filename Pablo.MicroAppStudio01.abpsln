@@ -1,0 +1,328 @@
+{
+  "id": "8f24e554-443d-48f0-b8d4-23f1517b24de",
+  "template": "microservice",
+  "versions": {
+    "LeptonX": "3.0.2",
+    "AbpFramework": "8.2.0",
+    "AbpCommercial": "8.2.0",
+    "AbpStudio": "0.7.1"
+  },
+  "folders": {
+    "items": {
+      "services": {},
+      "apps": {},
+      "gateways": {}
+    }
+  },
+  "runProfiles": {
+    "Default": {
+      "path": "etc/abp-studio/run-profiles/Default.abprun.json"
+    }
+  },
+  "modules": {
+    "Pablo.MicroAppStudio01.AdministrationService": {
+      "path": "services/administration/Pablo.MicroAppStudio01.AdministrationService.abpmdl",
+      "folder": "services"
+    },
+    "Pablo.MicroAppStudio01.IdentityService": {
+      "path": "services/identity/Pablo.MicroAppStudio01.IdentityService.abpmdl",
+      "folder": "services"
+    },
+    "Pablo.MicroAppStudio01.Web.Public": {
+      "path": "apps/public/Pablo.MicroAppStudio01.Web.Public.abpmdl",
+      "folder": "apps"
+    },
+    "Pablo.MicroAppStudio01.PublicGateway": {
+      "path": "gateways/public/Pablo.MicroAppStudio01.PublicGateway.abpmdl",
+      "folder": "gateways"
+    },
+    "Pablo.MicroAppStudio01.SaasService": {
+      "path": "services/saas/Pablo.MicroAppStudio01.SaasService.abpmdl",
+      "folder": "services"
+    },
+    "Pablo.MicroAppStudio01.ChatService": {
+      "path": "services/chat/Pablo.MicroAppStudio01.ChatService.abpmdl",
+      "folder": "services"
+    },
+    "Pablo.MicroAppStudio01.AuditLoggingService": {
+      "path": "services/audit-logging/Pablo.MicroAppStudio01.AuditLoggingService.abpmdl",
+      "folder": "services"
+    },
+    "Pablo.MicroAppStudio01.FileManagementService": {
+      "path": "services/file-management/Pablo.MicroAppStudio01.FileManagementService.abpmdl",
+      "folder": "services"
+    },
+    "Pablo.MicroAppStudio01.Blazor": {
+      "path": "apps/blazor/Pablo.MicroAppStudio01.Blazor.abpmdl",
+      "folder": "apps"
+    },
+    "Pablo.MicroAppStudio01.AuthServer": {
+      "path": "apps/auth-server/Pablo.MicroAppStudio01.AuthServer.abpmdl",
+      "folder": "apps"
+    },
+    "Pablo.MicroAppStudio01.WebGateway": {
+      "path": "gateways/web/Pablo.MicroAppStudio01.WebGateway.abpmdl",
+      "folder": "gateways"
+    }
+  },
+  "k8sProfiles": {
+    "local": {
+      "path": "etc/abp-studio/k8s-profiles/local.abpk8s.json"
+    },
+    "local-prod": {
+      "path": "etc/k8s-profiles/local-prod.abpk8s.json"
+    }
+  },
+  "commands": {
+    "helmBuildDotnetImage": {
+      "triggerTargets": [
+        "HELM_CHARTS_ROOT",
+        "HELM_MAIN_CHART",
+        "HELM_SUB_CHART"
+      ],
+      "executionTargets": [
+        "HELM_MAIN_CHART",
+        "HELM_SUB_CHART"
+      ],
+      "displayName": "Build Docker Image(s)",
+      "workingDirectory": "etc/helm",
+      "terminalCommand": "./build-image.ps1 -ProjectPath {{metadata.projectPath}} -ImageName {{metadata.imageName}} -ProjectType {{metadata.projectType}}",
+      "condition": "{{metadata.projectPath != null && metadata.imageName != null && metadata.projectType != null}}"
+    },
+    "helmInstallChart": {
+      "triggerTargets": [
+        "HELM_CHARTS_ROOT",
+        "HELM_MAIN_CHART"
+      ],
+      "executionTargets": [
+        "HELM_MAIN_CHART"
+      ],
+      "displayName": "Install Chart(s)",
+      "workingDirectory": "etc/helm",
+      "terminalCommand": "./install.ps1 -ChartName {{chart.name}} -Namespace {{profile.namespace}} -ReleaseName {{chart.name}}-{{profile.name}} -DotnetEnvironment {{metadata.dotnetEnvironment}} {{~if metadata.k8ssuffix}} -User {{metadata.k8ssuffix}}{{end}}",
+      "requireConfirmation": "true",
+      "confirmationText": "Are you sure to install the chart(s) for the profile {{ profile.name }}?"
+    },
+    "helmUninstallChart": {
+      "triggerTargets": [
+        "HELM_CHARTS_ROOT",
+        "HELM_MAIN_CHART"
+      ],
+      "executionTargets": [
+        "HELM_MAIN_CHART"
+      ],
+      "displayName": "Uninstall Chart(s)",
+      "workingDirectory": "etc/helm",
+      "terminalCommand": "./uninstall.ps1 -Namespace {{profile.namespace}} -ReleaseName {{chart.name}}-{{profile.name}} {{~if metadata.k8ssuffix}} -User {{metadata.k8ssuffix}}{{end}}",
+      "requireConfirmation": "true",
+      "confirmationText": "Are you sure to uninstall the chart(s) for the profile {{profile.name}}?"
+    },
+    "kubernetesRedeploy": {
+      "triggerTargets": [
+        "KUBERNETES_SERVICE"
+      ],
+      "executionTargets": [
+        "KUBERNETES_SERVICE"
+      ],
+      "displayName": "Redeploy",
+      "workingDirectory": "etc/helm",
+      "terminalCommand": "./build-image.ps1 -ProjectPath {{chart.metadata.projectPath}} -ImageName {{chart.metadata.imageName}} -ProjectType {{chart.metadata.projectType}} &&& ./install.ps1 -ChartName {{mainChart.name}} -Namespace {{profile.namespace}} -ReleaseName {{mainChart.name}}-{{profile.name}} -DotnetEnvironment {{mainChart.metadata.dotnetEnvironment}} {{~if metadata.k8ssuffix}} -User {{metadata.k8ssuffix}}{{end}}",
+      "requireConfirmation": "true",
+      "confirmationText": "Are you sure to redeploy the related chart '{{chart.name}}' for the service '{{name}}'?",
+      "condition": "{{chart != null && chart.metadata.projectPath != null && chart.metadata.imageName != null && chart.metadata.projectType != null}}"
+    },
+    "createTlsSecret": {
+      "triggerTargets": [
+        "HELM_CHARTS_ROOT"
+      ],
+      "executionTargets": [
+        "HELM_CHARTS_ROOT"
+      ],
+      "displayName": "Create Self-Signed TLS secret",
+      "workingDirectory": "etc/helm",
+      "terminalCommand": "./create-tls-secrets.ps1 -Namespace {{profile.namespace}} {{~if metadata.k8ssuffix}} -User {{metadata.k8ssuffix}}{{end}}"
+    }
+  },
+  "helm": {
+    "charts": {
+      "microappstudio01": {
+        "name": "microappstudio01",
+        "path": "etc/helm/microappstudio01",
+        "charts": {
+          "administration": {
+            "name": "administration",
+            "path": "etc/helm/microappstudio01/charts/administration",
+            "metadata": {
+              "projectPath": "../../services/administration/Pablo.MicroAppStudio01.AdministrationService/Pablo.MicroAppStudio01.AdministrationService.csproj",
+              "imageName": "microappstudio01/administration",
+              "projectType": "dotnet"
+            },
+            "services": [
+              ".*-administration$"
+            ]
+          },
+          "authserver": {
+            "name": "authserver",
+            "path": "etc/helm/microappstudio01/charts/authserver",
+            "metadata": {
+              "projectPath": "../../apps/auth-server/Pablo.MicroAppStudio01.AuthServer/Pablo.MicroAppStudio01.AuthServer.csproj",
+              "imageName": "microappstudio01/authserver",
+              "projectType": "dotnet"
+            },
+            "services": [
+              ".*-authserver$"
+            ]
+          },
+          "elasticsearch": {
+            "name": "elasticsearch",
+            "path": "etc/helm/microappstudio01/charts/elasticsearch",
+            "metadata": {}
+          },
+          "grafana": {
+            "name": "grafana",
+            "path": "etc/helm/microappstudio01/charts/grafana",
+            "metadata": {}
+          },
+          "identity": {
+            "name": "identity",
+            "path": "etc/helm/microappstudio01/charts/identity",
+            "metadata": {
+              "projectPath": "../../services/identity/Pablo.MicroAppStudio01.IdentityService/Pablo.MicroAppStudio01.IdentityService.csproj",
+              "imageName": "microappstudio01/identity",
+              "projectType": "dotnet"
+            },
+            "services": [
+              ".*-identity$"
+            ]
+          },
+          "kibana": {
+            "name": "kibana",
+            "path": "etc/helm/microappstudio01/charts/kibana",
+            "metadata": {}
+          },
+          "prometheus": {
+            "name": "prometheus",
+            "path": "etc/helm/microappstudio01/charts/prometheus",
+            "metadata": {}
+          },
+          "rabbitmq": {
+            "name": "rabbitmq",
+            "path": "etc/helm/microappstudio01/charts/rabbitmq"
+          },
+          "redis": {
+            "name": "redis",
+            "path": "etc/helm/microappstudio01/charts/redis"
+          },
+          "saas": {
+            "name": "saas",
+            "path": "etc/helm/microappstudio01/charts/saas",
+            "metadata": {
+              "projectPath": "../../services/saas/Pablo.MicroAppStudio01.SaasService/Pablo.MicroAppStudio01.SaasService.csproj",
+              "imageName": "microappstudio01/saas",
+              "projectType": "dotnet"
+            },
+            "services": [
+              ".*-saas$"
+            ]
+          },
+          "auditlogging": {
+            "name": "auditlogging",
+            "path": "etc/helm/microappstudio01/charts/auditlogging",
+            "metadata": {
+              "projectPath": "../../services/audit-logging/Pablo.MicroAppStudio01.AuditLoggingService/Pablo.MicroAppStudio01.AuditLoggingService.csproj",
+              "imageName": "microappstudio01/auditlogging",
+              "projectType": "dotnet"
+            },
+            "services": [
+              ".*-auditlogging$"
+            ]
+          },
+          "filemanagement": {
+            "name": "filemanagement",
+            "path": "etc/helm/microappstudio01/charts/filemanagement",
+            "metadata": {
+              "projectPath": "../../services/file-management/Pablo.MicroAppStudio01.FileManagementService/Pablo.MicroAppStudio01.FileManagementService.csproj",
+              "imageName": "microappstudio01/filemanagement",
+              "projectType": "dotnet"
+            },
+            "services": [
+              ".*-filemanagement"
+            ]
+          },
+          "chat": {
+            "name": "chat",
+            "path": "etc/helm/microappstudio01/charts/chat",
+            "metadata": {
+              "projectPath": "../../services/chat/Pablo.MicroAppStudio01.ChatService/Pablo.MicroAppStudio01.ChatService.csproj",
+              "imageName": "microappstudio01/chat",
+              "projectType": "dotnet"
+            },
+            "services": [
+              ".*-chat$"
+            ]
+          },
+          "sqlserver": {
+            "name": "sqlserver",
+            "path": "etc/helm/microappstudio01/charts/sqlserver"
+          },
+          "blazor": {
+            "name": "blazor",
+            "path": "etc/helm/microappstudio01/charts/blazor",
+            "metadata": {
+              "projectPath": "../../apps/blazor/Pablo.MicroAppStudio01.Blazor/Pablo.MicroAppStudio01.Blazor.csproj",
+              "imageName": "microappstudio01/blazor",
+              "projectType": "dotnet"
+            },
+            "services": [
+              ".*-blazor$"
+            ]
+          },
+          "webpublic": {
+            "name": "webpublic",
+            "path": "etc/helm/microappstudio01/charts/webpublic",
+            "metadata": {
+              "projectPath": "../../apps/public/Pablo.MicroAppStudio01.Web.Public/Pablo.MicroAppStudio01.Web.Public.csproj",
+              "imageName": "microappstudio01/webpublic",
+              "projectType": "dotnet"
+            },
+            "services": [
+              ".*-webpublic"
+            ]
+          },
+          "publicgateway": {
+            "name": "publicgateway",
+            "path": "etc/helm/microappstudio01/charts/publicgateway",
+            "metadata": {
+              "projectPath": "../../gateways/public/Pablo.MicroAppStudio01.PublicGateway/Pablo.MicroAppStudio01.PublicGateway.csproj",
+              "imageName": "microappstudio01/publicgateway",
+              "projectType": "dotnet"
+            },
+            "services": [
+              ".*-publicgateway$"
+            ]
+          },
+          "webgateway": {
+            "name": "webgateway",
+            "path": "etc/helm/microappstudio01/charts/webgateway",
+            "metadata": {
+              "projectPath": "../../gateways/web/Pablo.MicroAppStudio01.WebGateway/Pablo.MicroAppStudio01.WebGateway.csproj",
+              "imageName": "microappstudio01/webgateway",
+              "projectType": "dotnet"
+            },
+            "services": [
+              ".*-webgateway$"
+            ]
+          }
+        },
+        "metadata": {}
+      }
+    }
+  },
+  "options": {
+    "httpRequests": {
+      "ignoredUrls": [
+        "^/metrics$"
+      ]
+    }
+  }
+}

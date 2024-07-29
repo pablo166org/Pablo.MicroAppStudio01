@@ -1,0 +1,7 @@
+{{~
+  if config.ui_framework != "mvc"
+    helpers.delete_this_directory
+  else
+    helpers.rename_this_directory("Pablo.MicroAppStudio01.MicroserviceName")
+  end
+~}}

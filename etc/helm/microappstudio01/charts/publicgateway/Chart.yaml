@@ -1,0 +1,6 @@
+apiVersion: v2
+name: publicgateway
+appVersion: "1.0"
+description: MicroAppStudio01 Public WebSite Gateway
+version: 1.0.0
+type: application

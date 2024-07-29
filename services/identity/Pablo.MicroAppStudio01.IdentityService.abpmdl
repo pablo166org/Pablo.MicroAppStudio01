@@ -1,0 +1,59 @@
+{
+  "packages": {
+    "Pablo.MicroAppStudio01.IdentityService": {
+      "path": "Pablo.MicroAppStudio01.IdentityService/Pablo.MicroAppStudio01.IdentityService.abppkg"
+    },
+    "Pablo.MicroAppStudio01.IdentityService.Contracts": {
+      "path": "Pablo.MicroAppStudio01.IdentityService.Contracts/Pablo.MicroAppStudio01.IdentityService.Contracts.abppkg"
+    },
+    "Pablo.MicroAppStudio01.IdentityService.Tests": {
+      "path": "Pablo.MicroAppStudio01.IdentityService.Tests/Pablo.MicroAppStudio01.IdentityService.Tests.abppkg"
+    }
+  },
+  "imports": {
+    "Volo.Abp.Identity.Pro": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.PermissionManagement": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.FeatureManagement": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.SettingManagement": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.OpenIddict": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.OpenIddict.Pro": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.Identity": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Saas": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.OpenIddict.Pro": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.BlobStoring.Database": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.LanguageManagement": {
+      "version": "8.2.0",
+      "isInstalled": true
+    }
+  }
+}

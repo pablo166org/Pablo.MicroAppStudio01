@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-{{ .Chart.Name }}-configmap
+data:
+  appsettings.json: |-
+    {
+    "App": {
+        "SelfUrl": "{{ include "microappstudio01.hosts.blazor" . }}"
+    },
+    "AuthServer": {
+        "Authority": "{{ include "microappstudio01.hosts.authserver" . }}",
+        "ClientId": "Blazor",
+        "ResponseType": "code"
+    },
+    "RemoteServices": {
+        "Default": {
+        "BaseUrl": "{{ include "microappstudio01.hosts.webgateway" . }}"
+        }
+    },
+    "AbpCli": {
+        "Bundle": {
+        "Mode": "BundleAndMinify", /* Options: None, Bundle, BundleAndMinify */
+        "Name": "global"
+        }
+    }
+    }

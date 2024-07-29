@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\common.props" />
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+    <TargetFramework>{{common.target_dotnet_framework}}</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />
+    <PackageReference Include="NSubstitute" Version="4.3.0" />
+    <PackageReference Include="NSubstitute.Analyzers.CSharp" Version="1.0.15">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Shouldly" Version="4.0.3" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.extensibility.execution" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5" />
+    {{~ if config.database_provider == "ef" ~}}
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
+    {{~ else if config.database_provider == "mongodb" ~}}
+    <PackageReference Include="EphemeralMongo.Core" Version="1.1.0" />
+    <PackageReference Include="EphemeralMongo6.runtime.linux-x64" Version="1.1.0" Condition="$([MSBuild]::IsOSPlatform('Linux'))" />
+    <PackageReference Include="EphemeralMongo6.runtime.osx-x64" Version="1.1.0" Condition="$([MSBuild]::IsOSPlatform('OSX'))" />
+    <PackageReference Include="EphemeralMongo6.runtime.win-x64" Version="1.1.0" Condition="$([MSBuild]::IsOSPlatform('Windows'))" />
+    {{~ end~}}
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.TestBase" Version="{{common.abp_framework_version}}" />
+    {{~ if config.database_provider == "ef" ~}}
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="{{common.abp_framework_version}}" />
+    {{~ end~}}
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pablo.MicroAppStudio01.MicroserviceName\Pablo.MicroAppStudio01.MicroserviceName.csproj" />
+  </ItemGroup>
+</Project>

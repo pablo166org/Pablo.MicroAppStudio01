@@ -1,0 +1,7 @@
+{
+  "packages": {
+    "Pablo.MicroAppStudio01.MicroserviceName": {
+      "path": "Pablo.MicroAppStudio01.MicroserviceName/Pablo.MicroAppStudio01.MicroserviceName.abppkg"
+    }
+  }
+}

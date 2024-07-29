@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+  <Import Project="..\common.props" />
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Pablo.MicroAppStudio01.Blazor</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <CopyLocalLockFileAssemblies>True</CopyLocalLockFileAssemblies>
+    <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Blazorise.Bootstrap5" Version="1.5.2" />
+    <PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.5.2" />
+    <PackageReference Include="Blazorise.Components" Version="1.5.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Autofac.WebAssembly" Version="8.2.0" />
+    <PackageReference Include="Volo.Abp.Identity.Pro.Blazor.WebAssembly" Version="8.2.0" />
+    <PackageReference Include="Volo.Abp.OpenIddict.Pro.Blazor.WebAssembly" Version="8.2.0" />
+    <ProjectReference Include="../../../services/audit-logging/Pablo.MicroAppStudio01.AuditLoggingService.Contracts/Pablo.MicroAppStudio01.AuditLoggingService.Contracts.csproj" />
+    <PackageReference Include="Volo.Abp.AuditLogging.Blazor.WebAssembly" Version="8.2.0" />
+    <PackageReference Include="Volo.Abp.TextTemplateManagement.Blazor.WebAssembly" Version="8.2.0" />
+    <PackageReference Include="Volo.Abp.LanguageManagement.Blazor.WebAssembly" Version="8.2.0" />
+    <ProjectReference Include="../../../services/file-management/Pablo.MicroAppStudio01.FileManagementService.Contracts/Pablo.MicroAppStudio01.FileManagementService.Contracts.csproj" />
+    <PackageReference Include="Volo.FileManagement.Blazor.WebAssembly" Version="8.2.0" />
+    <ProjectReference Include="../../../services/chat/Pablo.MicroAppStudio01.ChatService.Contracts/Pablo.MicroAppStudio01.ChatService.Contracts.csproj" />
+    <PackageReference Include="Volo.Chat.Blazor.WebAssembly" Version="8.2.0" />
+    <PackageReference Include="Volo.Abp.Account.Pro.Admin.Blazor.WebAssembly" Version="8.2.0" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Components.WebAssembly.LeptonXTheme" Version="3.2.0" />
+    <PackageReference Include="Volo.Saas.Host.Blazor.WebAssembly" Version="8.2.0" />
+    <PackageReference Include="Volo.Saas.Tenant.Blazor.WebAssembly" Version="8.2.0" />
+    <ProjectReference Include="../../../services/saas/Pablo.MicroAppStudio01.SaasService.Contracts/Pablo.MicroAppStudio01.SaasService.Contracts.csproj" />
+    <ProjectReference Include="../../../services/identity/Pablo.MicroAppStudio01.IdentityService.Contracts/Pablo.MicroAppStudio01.IdentityService.Contracts.csproj" />
+    <ProjectReference Include="../../../services/administration/Pablo.MicroAppStudio01.AdministrationService.Contracts/Pablo.MicroAppStudio01.AdministrationService.Contracts.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\MicroAppStudio01Blazor\*.json" />
+    <Content Remove="Localization\MicroAppStudio01Blazor\*.json" />
+  </ItemGroup>
+</Project>

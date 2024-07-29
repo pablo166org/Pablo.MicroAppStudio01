@@ -1,0 +1,5 @@
+{{~
+  if config.database_provider != "mongodb"
+    helpers.delete_this_directory
+  end
+~}}

@@ -1,0 +1,96 @@
+{
+  "folders": {
+    "items": {
+      "services": {},
+      "infrastructure": {},
+      "apps": {},
+      "gateways": {}
+    }
+  },
+  "applications": {
+    "Pablo.MicroAppStudio01.AuthServer": {
+      "type": "dotnet-project",
+      "path": "../../../apps/auth-server/Pablo.MicroAppStudio01.AuthServer/Pablo.MicroAppStudio01.AuthServer.csproj",
+      "launchUrl": "http://localhost:44306",
+      "kubernetesService": ".*-authserver$",
+      "folder": "apps"
+    },
+    "Pablo.MicroAppStudio01.Web.Public": {
+      "type": "dotnet-project",
+      "path": "../../../apps/public/Pablo.MicroAppStudio01.Web.Public/Pablo.MicroAppStudio01.Web.Public.csproj",
+      "launchUrl": "http://localhost:44350",
+      "kubernetesService": ".*-webpublic$",
+      "folder": "apps"
+    },
+    "Pablo.MicroAppStudio01.PublicGateway": {
+      "type": "dotnet-project",
+      "path": "../../../gateways/public/Pablo.MicroAppStudio01.PublicGateway/Pablo.MicroAppStudio01.PublicGateway.csproj",
+      "launchUrl": "http://localhost:44322",
+      "kubernetesService": ".*-webpublic$",
+      "folder": "gateways"
+    },
+    "Pablo.MicroAppStudio01.SaasService": {
+      "type": "dotnet-project",
+      "path": "../../../services/saas/Pablo.MicroAppStudio01.SaasService/Pablo.MicroAppStudio01.SaasService.csproj",
+      "launchUrl": "http://localhost:44330",
+      "folder": "services",
+      "kubernetesService": ".*-saas$"
+    },
+    "Pablo.MicroAppStudio01.AuditLoggingService": {
+      "type": "dotnet-project",
+      "path": "../../../services/audit-logging/Pablo.MicroAppStudio01.AuditLoggingService/Pablo.MicroAppStudio01.AuditLoggingService.csproj",
+      "launchUrl": "http://localhost:44314",
+      "folder": "services",
+      "kubernetesService": ".*-auditlogging$"
+    },
+    "Pablo.MicroAppStudio01.FileManagementService": {
+      "type": "dotnet-project",
+      "path": "../../../services/file-management/Pablo.MicroAppStudio01.FileManagementService/Pablo.MicroAppStudio01.FileManagementService.csproj",
+      "launchUrl": "http://localhost:44305",
+      "folder": "services",
+      "kubernetesService": ".*-filemanagement"
+    },
+    "Pablo.MicroAppStudio01.ChatService": {
+      "type": "dotnet-project",
+      "path": "../../../services/chat/Pablo.MicroAppStudio01.ChatService/Pablo.MicroAppStudio01.ChatService.csproj",
+      "launchUrl": "http://localhost:44334",
+      "folder": "services",
+      "kubernetesService": ".*-chat$"
+    },
+    "Pablo.MicroAppStudio01.WebGateway": {
+      "type": "dotnet-project",
+      "path": "../../../gateways/web/Pablo.MicroAppStudio01.WebGateway/Pablo.MicroAppStudio01.WebGateway.csproj",
+      "launchUrl": "http://localhost:44386",
+      "kubernetesService": ".*-webgateway$",
+      "folder": "gateways"
+    },
+      "Pablo.MicroAppStudio01.Blazor": {
+        "type": "dotnet-project",
+        "launchUrl": "http://localhost:44349",
+        "path": "../../../apps/blazor/Pablo.MicroAppStudio01.Blazor/Pablo.MicroAppStudio01.Blazor.csproj",
+        "kubernetesService": ".*-blazor$",
+        "folder": "apps"
+      },
+    "Pablo.MicroAppStudio01.AdministrationService": {
+      "type": "dotnet-project",
+      "path": "../../../services/administration/Pablo.MicroAppStudio01.AdministrationService/Pablo.MicroAppStudio01.AdministrationService.csproj",
+      "launchUrl": "http://localhost:44333",
+      "kubernetesService": ".*-administration$",
+      "folder": "services"
+    },
+    "Pablo.MicroAppStudio01.IdentityService": {
+      "type": "dotnet-project",
+      "path": "../../../services/identity/Pablo.MicroAppStudio01.IdentityService/Pablo.MicroAppStudio01.IdentityService.csproj",
+      "launchUrl": "http://localhost:44398",
+      "kubernetesService": ".*-identity$",
+      "folder": "services"
+    },
+    "Docker-Dependencies": {
+      "type": "cli",
+      "startCommand": "./up.ps1",
+      "stopCommand": "./down.ps1",
+      "workingDirectory": "../../docker",
+      "folder": "infrastructure"
+    }
+  }
+}

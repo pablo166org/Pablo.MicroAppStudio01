@@ -1,0 +1,28 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5a75e943-3006-477f-a71c-75a20e4700ea}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.PublicGateway", "Pablo.MicroAppStudio01.PublicGateway\Pablo.MicroAppStudio01.PublicGateway.csproj", "{6b2093cc-cd84-46f4-87ee-a5ee931e7dcb}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6b2093cc-cd84-46f4-87ee-a5ee931e7dcb}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6b2093cc-cd84-46f4-87ee-a5ee931e7dcb}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6b2093cc-cd84-46f4-87ee-a5ee931e7dcb}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6b2093cc-cd84-46f4-87ee-a5ee931e7dcb}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6b2093cc-cd84-46f4-87ee-a5ee931e7dcb} = {5a75e943-3006-477f-a71c-75a20e4700ea}
+	EndGlobalSection
+EndGlobal

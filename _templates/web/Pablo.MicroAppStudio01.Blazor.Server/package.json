@@ -1,0 +1,13 @@
+{
+  "version": "0.1.0",
+  "name": "MicroserviceName,
+  "private": true,
+  "dependencies": {
+{{~ if config.theme == "basic" ~}}
+    "@abp/aspnetcore.mvc.ui.theme.basic": "~{{common.abp_framework_version}}",
+    "@abp/aspnetcore.components.server.basictheme": "~{{common.abp_framework_version}}"
+{{~ else if config.theme == "leptonx" ~}}
+    "@volo/abp.aspnetcore.mvc.ui.theme.leptonx": "~{{common.lepton_xversion}}",
+    "@volo/aspnetcore.components.server.leptonxtheme": "^3.0.2"
+{{~ end ~}}
+}

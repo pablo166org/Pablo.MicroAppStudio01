@@ -1,0 +1,27 @@
+﻿@page
+@model Pablo.MicroAppStudio01.MicroserviceName.Pages.IndexModel
+@using Pablo.MicroAppStudio01.MicroserviceName.Navigation
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Volo.Abp.Users
+@inject ICurrentUser CurrentUser
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = "Welcome";
+    PageLayout.Content.MenuItemName = MicroserviceNameMenus.Home;
+}
+<abp-card>
+    <abp-card-body>
+        <h2>
+            About This Project
+        </h2>
+
+        <p>
+            This is a startup template to build your own Microservice Solution on top of the <a href="https://commercial.abp.io/" target="_blank">ABP Commercial</a>.
+        </p>
+
+        <hr/>
+        <p class="text-end">
+            <a href="https://commercial.abp.io?ref=tmpl" target="_blank">commercial.abp.io</a>
+        </p>
+    </abp-card-body>
+</abp-card>

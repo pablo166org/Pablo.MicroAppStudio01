@@ -1,0 +1,39 @@
+{
+  "packages": {
+    "Pablo.MicroAppStudio01.SaasService": {
+      "path": "Pablo.MicroAppStudio01.SaasService/Pablo.MicroAppStudio01.SaasService.abppkg"
+    },
+    "Pablo.MicroAppStudio01.SaasService.Contracts": {
+      "path": "Pablo.MicroAppStudio01.SaasService.Contracts/Pablo.MicroAppStudio01.SaasService.Contracts.abppkg"
+    },
+    "Pablo.MicroAppStudio01.SaasService.Tests": {
+      "path": "Pablo.MicroAppStudio01.SaasService.Tests/Pablo.MicroAppStudio01.SaasService.Tests.abppkg"
+    }
+  },
+  "imports": {
+    "Volo.Abp.PermissionManagement": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.FeatureManagement": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.SettingManagement": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.BlobStoring.Database": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.LanguageManagement": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Saas": {
+      "version": "8.2.0",
+      "isInstalled": true
+    }
+  }
+}

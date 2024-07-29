@@ -1,0 +1,11 @@
+./build-image.ps1 -ProjectPath "../../services/administration/Pablo.MicroAppStudio01.AdministrationService/Pablo.MicroAppStudio01.AdministrationService.csproj" -ImageName microappstudio01/administration
+./build-image.ps1 -ProjectPath "../../services/identity/Pablo.MicroAppStudio01.IdentityService/Pablo.MicroAppStudio01.IdentityService.csproj" -ImageName microappstudio01/identity
+./build-image.ps1 -ProjectPath "../../services/saas/Pablo.MicroAppStudio01.SaasService/Pablo.MicroAppStudio01.SaasService.csproj" -ImageName microappstudio01/saas
+./build-image.ps1 -ProjectPath "../../services/audit-logging/Pablo.MicroAppStudio01.AuditLoggingService/Pablo.MicroAppStudio01.AuditLoggingService.csproj" -ImageName microappstudio01/auditlogging
+./build-image.ps1 -ProjectPath "../../services/file-management/Pablo.MicroAppStudio01.FileManagementService/Pablo.MicroAppStudio01.FileManagementService.csproj" -ImageName microappstudio01/filemanagement
+./build-image.ps1 -ProjectPath "../../services/chat/Pablo.MicroAppStudio01.ChatService/Pablo.MicroAppStudio01.ChatService.csproj" -ImageName microappstudio01/chat
+./build-image.ps1 -ProjectPath "../../gateways/web/Pablo.MicroAppStudio01.WebGateway/Pablo.MicroAppStudio01.WebGateway.csproj" -ImageName microappstudio01/webgateway
+./build-image.ps1 -ProjectPath "../../apps/auth-server/Pablo.MicroAppStudio01.AuthServer/Pablo.MicroAppStudio01.AuthServer.csproj" -ImageName microappstudio01/authserver
+./build-image.ps1 -ProjectPath "../../apps/blazor/Pablo.MicroAppStudio01.Blazor/Pablo.MicroAppStudio01.Blazor.csproj" -ImageName microappstudio01/blazor
+./build-image.ps1 -ProjectPath "../../public/web/Pablo.MicroAppStudio01.Web.Public/Pablo.MicroAppStudio01.Web.Public.csproj" -ImageName microappstudio01/webpublic
+./build-image.ps1 -ProjectPath "../../gateways/public/Pablo.MicroAppStudio01.PublicGateway/Pablo.MicroAppStudio01.PublicGateway.csproj" -ImageName microappstudio01/publicgateway

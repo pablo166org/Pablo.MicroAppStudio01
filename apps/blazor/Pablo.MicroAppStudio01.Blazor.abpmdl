@@ -1,0 +1,65 @@
+{
+  "packages": {
+    "Pablo.MicroAppStudio01.Blazor": {
+      "path": "Pablo.MicroAppStudio01.Blazor/Pablo.MicroAppStudio01.Blazor.abppkg",
+    }
+  },
+  "imports": {
+    "Volo.Abp.Account.Pro": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.FeatureManagement": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.PermissionManagement": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.SettingManagement": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.AuditLogging.Pro": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Pablo.MicroAppStudio01.AuditLoggingService": {
+      "path": "../../services/audit-logging/Pablo.MicroAppStudio01.AuditLoggingService.abpmdl",
+      "isInstalled": true
+    },
+    "Volo.Chat": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Pablo.MicroAppStudio01.ChatService": {
+      "path": "../../services/chat/Pablo.MicroAppStudio01.ChatService.abpmdl",
+      "isInstalled": true
+    },
+    "Volo.Saas": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Pablo.MicroAppStudio01.SaasService": {
+      "path": "../../services/saas/Pablo.MicroAppStudio01.SaasService.abpmdl",
+      "isInstalled": true
+    },
+    "Volo.FileManagement": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Pablo.MicroAppStudio01.FileManagementService": {
+      "path": "../../services/file-management/Pablo.MicroAppStudio01.FileManagementService.abpmdl",
+      "isInstalled": true
+    },
+    "Volo.Abp.OpenIddict.Pro": {
+      "version": "8.2.0",
+      "isInstalled": true
+    },
+    "Volo.Abp.Identity.Pro": {
+      "version": "8.2.0",
+      "isInstalled": true
+    }
+  }
+}

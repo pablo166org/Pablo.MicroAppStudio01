@@ -1,0 +1,13 @@
+{
+  "packages": {
+    "Pablo.MicroAppStudio01.Web.Public": {
+      "path": "Pablo.MicroAppStudio01.Web.Public/Pablo.MicroAppStudio01.Web.Public.abppkg"
+    }
+  },
+  "imports": {
+    "Volo.Abp.Account.Pro": {
+      "version": "8.2.0",
+      "isInstalled": true
+    }
+  }
+}

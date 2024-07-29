@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+  <Import Project="..\common.props" />
+  <PropertyGroup>
+    <TargetFramework>{{common.target_dotnet_framework}}</TargetFramework>
+    <RootNamespace>Pablo.MicroAppStudio01.MicroserviceName</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <CopyLocalLockFileAssemblies>True</CopyLocalLockFileAssemblies>
+    <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Blazorise.Bootstrap5" Version="1.5.1" />
+    <PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.5.1" />
+    <PackageReference Include="Blazorise.Components" Version="1.5.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Autofac.WebAssembly" Version="{{common.abp_framework_version}}" />
+    {{~ if config.theme == "basic" ~}}
+    <PackageReference Include="Volo.Abp.AspNetCore.Components.WebAssembly.BasicTheme" Version="{{common.abp_framework_version}}" />
+    {{~ else if config.theme == "leptonx" ~}}
+    <PackageReference Include="Volo.Abp.AspNetCore.Components.WebAssembly.LeptonXTheme" Version="{{common.lepton_xversion}}" />
+    {{~ end ~}}
+   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\MicroserviceName\*.json" />
+    <Content Remove="Localization\MicroserviceName\*.json" />
+  </ItemGroup>
+</Project>
