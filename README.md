@@ -1,6 +1,6 @@
 # MicroAppStudio01
 
-This is a startup template to create microservice based solutions.
+This is a startup template to create microservice based solutions
 
 ## Before Running the Solution
 
