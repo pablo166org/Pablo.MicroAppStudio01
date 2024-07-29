@@ -1,0 +1,6 @@
+image:
+  repository: "microappstudio01/saas"
+  tag: "latest"
+  pullPolicy: IfNotPresent
+swagger:
+  isEnabled: "true"

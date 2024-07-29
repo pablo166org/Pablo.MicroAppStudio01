@@ -1,0 +1,22 @@
+global:
+  hosts:
+    authserver: "[RELEASE_NAME]-authserver"
+    webgateway: "[RELEASE_NAME]-webgateway"
+    kibana: "[RELEASE_NAME]-kibana"
+    grafana: "[RELEASE_NAME]-grafana"
+    blazor: "[RELEASE_NAME]-blazor"
+    publicgateway: "[RELEASE_NAME]-publicgateway"
+    webpublic: "[RELEASE_NAME]-webpublic"
+  connectionStrings:
+    administration: "Server=[RELEASE_NAME]-sqlserver,1433; Database=MicroAppStudio01_Administration; User Id=sa; Password=myPassw@rd; TrustServerCertificate=True"
+    blobStoring: "Server=[RELEASE_NAME]-sqlserver,1433; Database=MicroAppStudio01_BlobStoring; User Id=sa; Password=myPassw@rd; TrustServerCertificate=True"
+    identity: "Server=[RELEASE_NAME]-sqlserver,1433; Database=MicroAppStudio01_Identity; User Id=sa; Password=myPassw@rd; TrustServerCertificate=True"
+    saas: "Server=[RELEASE_NAME]-sqlserver,1433; Database=MicroAppStudio01_SaasService; User Id=sa; Password=myPassw@rd; TrustServerCertificate=True"
+    auditLogging: "Server=[RELEASE_NAME]-sqlserver,1433; Database=MicroAppStudio01_AuditLoggingService; User Id=sa; Password=myPassw@rd; TrustServerCertificate=True"
+    filemanagement: "Server=[RELEASE_NAME]-sqlserver,1433; Database=MicroAppStudio01_FileManagementService; User Id=sa; Password=myPassw@rd; TrustServerCertificate=True"
+    chat: "Server=[RELEASE_NAME]-sqlserver,1433; Database=MicroAppStudio01_ChatService; User Id=sa; Password=myPassw@rd; TrustServerCertificate=True"
+  dotnetEnvironment: "Staging"
+  enablePII: "true"
+  stringEncryptionDefaultPassPhrase: "CEbdwLyGJobrnJbm"
+  abpStudioClient:
+    isLinkEnabled: "true"

@@ -1,0 +1,7 @@
+global:
+  tlsSecret: "microappstudio01-local-tls"
+  abpStudioClient:
+    studioUrl: "http://abp-studio-proxy:38271"
+  elasticSearch:
+    isLoggingEnabled: "true"
+    port: 9200

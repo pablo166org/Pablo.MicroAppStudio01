@@ -1,0 +1,33 @@
+administration:
+  image:
+    tag: "20240725.153122"
+authserver:
+  image:
+    tag: "20240725.153154"
+identity:
+  image:
+    tag: "20240725.153219"
+saas:
+  image:
+    tag: "20240725.153235"
+auditlogging:
+  image:
+    tag: "20240725.153245"
+filemanagement:
+  image:
+    tag: "20240725.153255"
+chat:
+  image:
+    tag: "20240725.153308"
+blazor:
+  image:
+    tag: "20240725.153323"
+webpublic:
+  image:
+    tag: "20240725.153512"
+publicgateway:
+  image:
+    tag: "20240725.153547"
+webgateway:
+  image:
+    tag: "20240725.153555"

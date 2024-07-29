@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "{{ .Release.Name }}-{{ .Chart.Name }}"
+spec:
+  selector:
+    matchLabels:
+      app: "{{ .Release.Name }}-{{ .Chart.Name }}"
+  template:
+    metadata:
+      labels:
+        app: "{{ .Release.Name }}-{{ .Chart.Name }}"
+    spec:
+      containers:
+      - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: "{{ .Values.image.pullPolicy }}"
+        name: "{{ .Release.Name }}-{{ .Chart.Name }}"
+        ports:
+        - name: "http"
+          containerPort: 80
+        env:
+        - name: "DOTNET_ENVIRONMENT"
+          value: "{{ .Values.global.dotnetEnvironment }}"
+        - name: "ConnectionStrings__Administration"
+          value: "{{ .Values.global.connectionStrings.administration | replace "[RELEASE_NAME]" .Release.Name }}"
+        - name: "ConnectionStrings__AbpBlobStoring"
+          value: "{{ .Values.global.connectionStrings.blobStoring | replace "[RELEASE_NAME]" .Release.Name }}"
+        - name: "ConnectionStrings__SaasService"
+          value: "{{ .Values.global.connectionStrings.saas | replace "[RELEASE_NAME]" .Release.Name }}"
+        - name: "ConnectionStrings__AuditLoggingService"
+          value: "{{ .Values.global.connectionStrings.auditLogging | replace "[RELEASE_NAME]" .Release.Name }}"
+        - name: "App__CorsOrigins"
+          value: "{{ include "microappstudio01.hosts.webgateway" . }}"
+        - name: App__EnablePII
+          value: "{{ .Values.global.enablePII }}"
+        - name: "Swagger__IsEnabled"
+          value: "{{ .Values.swagger.isEnabled }}"
+        - name: "AuthServer__Authority"
+          value: "{{ include "microappstudio01.hosts.authserver" . }}"
+        - name: "AuthServer__MetaAddress"
+          value: "http://{{ .Release.Name }}-authserver"
+        - name: "Redis__Configuration"
+          value: "{{ .Release.Name }}-redis"
+        - name: "RabbitMQ__Connections__Default__HostName"
+          value: "{{ .Release.Name }}-rabbitmq"
+        - name: "ElasticSearch__IsLoggingEnabled"
+          value: "{{ .Values.global.elasticSearch.isLoggingEnabled }}"
+        - name: "ElasticSearch__Url"
+          value: "http://{{ .Release.Name }}-elasticsearch:{{ .Values.global.elasticSearch.port }}"
+        - name: "StringEncryption__DefaultPassPhrase"
+          value: "{{ .Values.global.stringEncryptionDefaultPassPhrase }}"
+        - name: "AbpStudioClient__StudioUrl"
+          value: "{{ .Values.global.abpStudioClient.studioUrl }}"
+        - name: "AbpStudioClient__IsLinkEnabled"
+          value: "{{ .Values.global.abpStudioClient.isLinkEnabled }}"

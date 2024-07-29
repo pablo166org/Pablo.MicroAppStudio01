@@ -1,0 +1,4 @@
+image:
+  repository: "microappstudio01/blazor"
+  tag: "latest"
+  pullPolicy: IfNotPresent

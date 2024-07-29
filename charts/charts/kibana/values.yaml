@@ -1,0 +1,4 @@
+port: 5601
+image:
+  repository: "docker.elastic.co/kibana/kibana"
+  tag: "8.10.4"

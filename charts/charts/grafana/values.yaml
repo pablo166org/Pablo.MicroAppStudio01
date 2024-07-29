@@ -1,0 +1,4 @@
+﻿port: 3000
+image:
+  repository: "grafana/grafana"
+  tag: "10.2.0"
