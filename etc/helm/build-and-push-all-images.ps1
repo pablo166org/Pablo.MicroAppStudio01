@@ -4,8 +4,6 @@ $Version = Get-Date -Format "yyyyMMdd.HHmmss"
 
 #construir imagenes
 ./build-image.ps1 -ProjectPath "../../services/administration/Pablo.MicroAppStudio01.AdministrationService/Pablo.MicroAppStudio01.AdministrationService.csproj" -ImageName microappstudio01/administration -Version $Version
-./push-image.ps1 -LocalTagName microappstudio01/administration -RemoteTagName ppelle/administration -Version $Version
-
 ./build-image.ps1 -ProjectPath "../../services/identity/Pablo.MicroAppStudio01.IdentityService/Pablo.MicroAppStudio01.IdentityService.csproj" -ImageName microappstudio01/identity -Version $Version
 ./build-image.ps1 -ProjectPath "../../services/saas/Pablo.MicroAppStudio01.SaasService/Pablo.MicroAppStudio01.SaasService.csproj" -ImageName microappstudio01/saas -Version $Version
 ./build-image.ps1 -ProjectPath "../../services/audit-logging/Pablo.MicroAppStudio01.AuditLoggingService/Pablo.MicroAppStudio01.AuditLoggingService.csproj" -ImageName microappstudio01/auditlogging -Version $Version
@@ -19,7 +17,7 @@ $Version = Get-Date -Format "yyyyMMdd.HHmmss"
 
 
  #subir imagenes a docker hub
-
+ ./push-image.ps1 -LocalTagName microappstudio01/administration -RemoteTagName ppelle/administration -Version $Version
 ./push-image.ps1 -LocalTagName microappstudio01/identity -RemoteTagName ppelle/identity -Version $Version
 ./push-image.ps1 -LocalTagName microappstudio01/saas -RemoteTagName ppelle/saas -Version $Version
 ./push-image.ps1 -LocalTagName microappstudio01/auditlogging -RemoteTagName ppelle/auditlogging -Version $Version
