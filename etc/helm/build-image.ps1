@@ -10,7 +10,15 @@ if ($Version -eq 'auto') {
 }
 
 $currentFolder = $PSScriptRoot
-$relativeProjectFolder = [System.IO.Path]::GetExtension($ProjectPath) -eq "" ? $ProjectPath : [System.IO.Path]::GetDirectoryName($ProjectPath)
+
+if ([System.IO.Path]::GetExtension($ProjectPath) -eq "" ){
+  $relativeProjectFolder  = $ProjectPath 
+}
+else 
+{
+  $relativeProjectFolder  =  [System.IO.Path]::GetDirectoryName($ProjectPath)
+}
+
 $projectFolder = Join-Path $currentFolder $relativeProjectFolder
 
 Set-Location $projectFolder
