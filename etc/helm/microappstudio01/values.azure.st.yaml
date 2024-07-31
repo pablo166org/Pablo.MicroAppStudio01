@@ -1,0 +1,167 @@
+#archivos values.yaml, values.microappstudio01-local.yaml
+global:
+  hosts:
+    # authserver: "[RELEASE_NAME]-authserver"
+    # webgateway: "[RELEASE_NAME]-webgateway"
+    # kibana: "[RELEASE_NAME]-kibana"
+    # grafana: "[RELEASE_NAME]-grafana"
+    # blazor: "[RELEASE_NAME]-blazor"
+    # publicgateway: "[RELEASE_NAME]-publicgateway"
+    # webpublic: "[RELEASE_NAME]-webpublic"
+    authserver: "[RELEASE_NAME]-authserver.gitlabseedingenieria.com.ar"
+    webgateway: "[RELEASE_NAME]-webgateway.gitlabseedingenieria.com.ar"
+    kibana: "[RELEASE_NAME]-kibana.gitlabseedingenieria.com.ar"
+    grafana: "[RELEASE_NAME]-grafana.gitlabseedingenieria.com.ar"
+    blazor: "[RELEASE_NAME]-blazor.gitlabseedingenieria.com.ar"
+    publicgateway: "[RELEASE_NAME]-publicgateway.gitlabseedingenieria.com.ar"
+    webpublic: "[RELEASE_NAME]-webpublic.gitlabseedingenieria.com.ar"
+
+  connectionStrings:
+    administration: "Server=[RELEASE_NAME]-sqlserver,1433; Database=MicroAppStudio01_Administration; User Id=sa; Password=myPassw@rd; TrustServerCertificate=True"
+    blobStoring: "Server=[RELEASE_NAME]-sqlserver,1433; Database=MicroAppStudio01_BlobStoring; User Id=sa; Password=myPassw@rd; TrustServerCertificate=True"
+    identity: "Server=[RELEASE_NAME]-sqlserver,1433; Database=MicroAppStudio01_Identity; User Id=sa; Password=myPassw@rd; TrustServerCertificate=True"
+    saas: "Server=[RELEASE_NAME]-sqlserver,1433; Database=MicroAppStudio01_SaasService; User Id=sa; Password=myPassw@rd; TrustServerCertificate=True"
+    auditLogging: "Server=[RELEASE_NAME]-sqlserver,1433; Database=MicroAppStudio01_AuditLoggingService; User Id=sa; Password=myPassw@rd; TrustServerCertificate=True"
+    filemanagement: "Server=[RELEASE_NAME]-sqlserver,1433; Database=MicroAppStudio01_FileManagementService; User Id=sa; Password=myPassw@rd; TrustServerCertificate=True"
+    chat: "Server=[RELEASE_NAME]-sqlserver,1433; Database=MicroAppStudio01_ChatService; User Id=sa; Password=myPassw@rd; TrustServerCertificate=True"
+  dotnetEnvironment: "Staging"
+  enablePII: "true"
+  stringEncryptionDefaultPassPhrase: "CEbdwLyGJobrnJbm"
+  abpStudioClient:
+    isLinkEnabled: "false" #apago para azure
+    studioUrl: "http://abp-studio-proxy:38271" # ver si puedo dejar en blanco, no se como lo usa internamente
+  tlsSecret: "microappstudio01-local-tls"  # esto ver como hacer en prod
+  elasticSearch:
+    isLoggingEnabled: "true"
+    port: 9200
+
+#archivo values.localdev.yaml - info de Images
+administration:
+  image:
+    repository: "ppelle/administration"
+    tag: "20240729.171549"
+    pullPolicy: IfNotPresent
+  swagger:
+    isEnabled: "true"
+
+authserver:
+  image:
+    repository: "ppelle/authserver"
+    tag: "20240729.171549"
+    pullPolicy: IfNotPresent
+
+identity:
+  image:
+    repository: "ppelle/identity"
+    tag: "20240729.171549"
+    pullPolicy: IfNotPresent
+  swagger:
+    isEnabled: "true"
+  initialAdminEmailAddress: "pablo.pellegrini@seedingenieria.com.ar"
+  initialAdminPassword: "1q2w3E*"
+
+saas:
+  image:
+    repository: "ppelle/saas"
+    tag: "20240729.171549"
+    pullPolicy: IfNotPresent
+  swagger:
+    isEnabled: "true"
+
+auditlogging:
+  image:
+    repository: "ppelle/auditlogging"
+    tag: "20240729.171549"
+    pullPolicy: IfNotPresent
+  swagger:
+    isEnabled: "true"
+
+filemanagement:
+  image:
+    repository: "ppelle/filemanagement"
+    tag: "20240729.171549"
+    pullPolicy: IfNotPresent
+  swagger:
+    isEnabled: "true"
+
+chat:
+  image:
+    repository: "ppelle/chat"
+    tag: "20240729.171549"
+    pullPolicy: IfNotPresent
+  swagger:
+    isEnabled: "true"
+    
+blazor:
+  image:
+    repository: "ppelle/blazor"
+    tag: "20240729.171549"
+    pullPolicy: IfNotPresent
+
+webpublic:
+  image:
+    repository: "ppelle/webpublic"
+    tag: "20240729.171549"
+    pullPolicy: IfNotPresent
+  authServer:
+    clientSecret: "1q2w3e*"
+
+publicgateway:
+  image:
+    repository: "ppelle/publicgateway"
+    tag: "20240725.153512"
+    pullPolicy: "IfNotPresent"
+  swagger:
+    isEnabled: "true"
+    
+webgateway:
+  image:
+    repository: "ppelle/webgateway"
+    tag: "20240725.153512"
+    pullPolicy: "IfNotPresent"
+  swagger:
+    isEnabled: "true"
+
+elasticsearch:
+  image:
+    repository: "docker.elastic.co/elasticsearch/elasticsearch"
+    tag: "8.10.4"
+
+grafana:
+  port: 3000
+  image:
+    repository: "grafana/grafana"
+    tag: "10.2.0"
+
+kibana:
+  port: 5601
+  image:
+    repository: "docker.elastic.co/kibana/kibana"
+    tag: "8.10.4"
+
+prometheus:
+  port: 9090
+  image:
+    repository: "prom/prometheus"
+    tag: "v2.47.2"
+
+rabbitmq:
+  image:
+    repository: "rabbitmq"
+    tag: "3.12.7-management-alpine"
+  ports:
+    http: 15672
+    amqp: 5672
+
+redis:
+  port: 6379
+  image:
+    repository: "redis"
+    tag: "7.2.2-alpine"
+
+sqlserver:
+  port: 1433
+  sa_password: "myPassw@rd"
+  image:
+    repository: "mcr.microsoft.com/azure-sql-edge"
+    tag: "1.0.7"
