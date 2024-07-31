@@ -1,3 +1,4 @@
+Archivo Helpers
 {{- define "microappstudio01.hosts.authserver" -}}
 {{- print "https://" (.Values.global.hosts.authserver | replace "[RELEASE_NAME]" .Release.Name) -}}
 {{- end -}}
