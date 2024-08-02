@@ -8,13 +8,13 @@ global:
     # blazor: "[RELEASE_NAME]-blazor"
     # publicgateway: "[RELEASE_NAME]-publicgateway"
     # webpublic: "[RELEASE_NAME]-webpublic"
-    authserver: "[RELEASE_NAME]-authserver.gitlabseedingenieria.com.ar"
-    webgateway: "[RELEASE_NAME]-webgateway.gitlabseedingenieria.com.ar"
-    kibana: "[RELEASE_NAME]-kibana.gitlabseedingenieria.com.ar"
-    grafana: "[RELEASE_NAME]-grafana.gitlabseedingenieria.com.ar"
-    blazor: "[RELEASE_NAME]-blazor.gitlabseedingenieria.com.ar"
-    publicgateway: "[RELEASE_NAME]-publicgateway.gitlabseedingenieria.com.ar"
-    webpublic: "[RELEASE_NAME]-webpublic.gitlabseedingenieria.com.ar"
+    authserver: "[RELEASE_NAME]-authserver.seeding.com.ar"
+    webgateway: "[RELEASE_NAME]-webgateway.seeding.com.ar"
+    kibana: "[RELEASE_NAME]-kibana.seeding.com.ar"
+    grafana: "[RELEASE_NAME]-grafana.seeding.com.ar"
+    blazor: "[RELEASE_NAME]-blazor.seeding.com.ar"
+    publicgateway: "[RELEASE_NAME]-publicgateway.seeding.com.ar"
+    webpublic: "[RELEASE_NAME]-webpublic.seeding.com.ar"
 
   connectionStrings:
     administration: "Server=[RELEASE_NAME]-sqlserver,1433; Database=MicroAppStudio01_Administration; User Id=sa; Password=myPassw@rd; TrustServerCertificate=True"
@@ -30,7 +30,7 @@ global:
   abpStudioClient:
     isLinkEnabled: "false" #apago para azure
     studioUrl: "http://abp-studio-proxy:38271" # ver si puedo dejar en blanco, no se como lo usa internamente
-  tlsSecret: "microappstudio01-local-tls"  # esto ver como hacer en prod
+  tlsSecret: "microappstudio-secret"  # esto ver como hacer en prod
   elasticSearch:
     isLoggingEnabled: "true"
     port: 9200
@@ -109,7 +109,7 @@ webpublic:
 publicgateway:
   image:
     repository: "ppelle/publicgateway"
-    tag: "20240725.153512"
+    tag: "20240729.171549"
     pullPolicy: "IfNotPresent"
   swagger:
     isEnabled: "true"
@@ -117,7 +117,7 @@ publicgateway:
 webgateway:
   image:
     repository: "ppelle/webgateway"
-    tag: "20240725.153512"
+    tag: "20240729.171549"
     pullPolicy: "IfNotPresent"
   swagger:
     isEnabled: "true"
