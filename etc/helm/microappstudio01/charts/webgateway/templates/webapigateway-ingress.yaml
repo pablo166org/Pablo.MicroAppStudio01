@@ -4,16 +4,20 @@ metadata:
   name: "{{ .Release.Name }}-{{ .Chart.Name }}"
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: "/"
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    cert-manager.io/cluster-issuer: "letsencrypt-production"
+    cert-manager.io/renew-before: 72h
+    acme.cert-manager.io/http01-edit-in-place: "true"
+    # nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     nginx.ingress.kubernetes.io/proxy-buffer-size: "32k"
     nginx.ingress.kubernetes.io/proxy-buffers-number: "8"
-    cert-manager.io/cluster-issuer: "letsencrypt"
+    # cert-manager.io/cluster-issuer: "letsencrypt"
 spec:
-  ingressClassName: "nginx"
+  ingressClassName: public
   tls:
   - hosts:
       - "{{ (include "microappstudio01.hosts.webgateway" .) | trimPrefix "https://" }}"
-    secretName: "{{ .Values.global.tlsSecret }}"
+    secretName: "{{ .Release.Name }}-{{ .Chart.Name }}"
+    #secretName: "{{ .Values.global.tlsSecret }}"
   rules:
   - host: "{{ (include "microappstudio01.hosts.webgateway" .) | trimPrefix "https://" }}"
     http:
