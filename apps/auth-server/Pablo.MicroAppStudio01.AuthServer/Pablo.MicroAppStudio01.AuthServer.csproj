@@ -72,4 +72,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Pablo.MicroApp01.ServiceDefaults\Pablo.MicroApp01.ServiceDefaults.csproj" />
+  </ItemGroup>
 </Project>

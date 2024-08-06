@@ -16,7 +16,7 @@
     },
     "Pablo.MicroAppStudio01.AuthServer": {
       "commandName": "Project",
-      "dotnetRunMessages": "true",
+      "dotnetRunMessages": true,
       "launchBrowser": true,
       "applicationUrl": "http://localhost:44306",
       "environmentVariables": {

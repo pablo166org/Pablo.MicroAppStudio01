@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsAspireHost>true</IsAspireHost>
+    <UserSecretsId>d60aecac-48d8-492e-a2e0-788ded85e071</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\apps\auth-server\Pablo.MicroAppStudio01.AuthServer\Pablo.MicroAppStudio01.AuthServer.csproj" />
+    <ProjectReference Include="..\apps\blazor\Pablo.MicroAppStudio01.Blazor\Pablo.MicroAppStudio01.Blazor.csproj" />
+    <ProjectReference Include="..\apps\public\Pablo.MicroAppStudio01.Web.Public\Pablo.MicroAppStudio01.Web.Public.csproj" />
+    <ProjectReference Include="..\gateways\public\Pablo.MicroAppStudio01.PublicGateway\Pablo.MicroAppStudio01.PublicGateway.csproj" />
+    <ProjectReference Include="..\gateways\web\Pablo.MicroAppStudio01.WebGateway\Pablo.MicroAppStudio01.WebGateway.csproj" />
+    <ProjectReference Include="..\services\administration\Pablo.MicroAppStudio01.AdministrationService\Pablo.MicroAppStudio01.AdministrationService.csproj" />
+    <ProjectReference Include="..\services\audit-logging\Pablo.MicroAppStudio01.AuditLoggingService\Pablo.MicroAppStudio01.AuditLoggingService.csproj" />
+    <ProjectReference Include="..\services\chat\Pablo.MicroAppStudio01.ChatService\Pablo.MicroAppStudio01.ChatService.csproj" />
+    <ProjectReference Include="..\services\file-management\Pablo.MicroAppStudio01.FileManagementService\Pablo.MicroAppStudio01.FileManagementService.csproj" />
+    <ProjectReference Include="..\services\identity\Pablo.MicroAppStudio01.IdentityService\Pablo.MicroAppStudio01.IdentityService.csproj" />
+    <ProjectReference Include="..\services\saas\Pablo.MicroAppStudio01.SaasService\Pablo.MicroAppStudio01.SaasService.csproj" />
+  </ItemGroup>
+
+</Project>

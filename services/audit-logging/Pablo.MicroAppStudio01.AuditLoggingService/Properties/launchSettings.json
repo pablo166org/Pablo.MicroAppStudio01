@@ -16,7 +16,7 @@
     },
     "Pablo.MicroAppStudio01.AuditLoggingService": {
       "commandName": "Project",
-      "dotnetRunMessages": "true",
+      "dotnetRunMessages": true,
       "launchBrowser": true,
       "applicationUrl": "http://localhost:44314",
       "environmentVariables": {

@@ -7,83 +7,84 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "apps", "apps", "{4CE8F2F5-4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "auth-server", "auth-server", "{A9B9F6D5-3BF0-4652-83E5-723E7413F1E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.AuthServer", "apps\auth-server\Pablo.MicroAppStudio01.AuthServer\Pablo.MicroAppStudio01.AuthServer.csproj", "{6C976FE4-ADC6-4C50-9936-68EC31CB0693}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.AuthServer", "apps\auth-server\Pablo.MicroAppStudio01.AuthServer\Pablo.MicroAppStudio01.AuthServer.csproj", "{6C976FE4-ADC6-4C50-9936-68EC31CB0693}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "blazor", "blazor", "{63942F75-7E54-47A9-9D31-D6DD965C4868}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.Blazor", "apps\blazor\Pablo.MicroAppStudio01.Blazor\Pablo.MicroAppStudio01.Blazor.csproj", "{7157AFE8-7307-473A-A1E8-1A90E742EC10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.Blazor", "apps\blazor\Pablo.MicroAppStudio01.Blazor\Pablo.MicroAppStudio01.Blazor.csproj", "{7157AFE8-7307-473A-A1E8-1A90E742EC10}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "public", "public", "{4BF3FB10-E46B-4B3B-A56A-340171B4390B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.Web.Public", "apps\public\Pablo.MicroAppStudio01.Web.Public\Pablo.MicroAppStudio01.Web.Public.csproj", "{E5E7DE6F-1D4F-4C1C-93FD-0F6D37A559B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.Web.Public", "apps\public\Pablo.MicroAppStudio01.Web.Public\Pablo.MicroAppStudio01.Web.Public.csproj", "{E5E7DE6F-1D4F-4C1C-93FD-0F6D37A559B1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gateways", "gateways", "{9928983D-0F8E-4679-B4D8-AE7E0C673B0F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "public", "public", "{7C22BB89-E1A8-4C99-8C5A-CE0836B14A36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.PublicGateway", "gateways\public\Pablo.MicroAppStudio01.PublicGateway\Pablo.MicroAppStudio01.PublicGateway.csproj", "{7973B718-AF85-49C0-9068-6B831052BDE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.PublicGateway", "gateways\public\Pablo.MicroAppStudio01.PublicGateway\Pablo.MicroAppStudio01.PublicGateway.csproj", "{7973B718-AF85-49C0-9068-6B831052BDE3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{88C1729E-2172-4BD1-A569-352BA312DD9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.WebGateway", "gateways\web\Pablo.MicroAppStudio01.WebGateway\Pablo.MicroAppStudio01.WebGateway.csproj", "{16767158-A04C-4749-BA09-B4B50322CB29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.WebGateway", "gateways\web\Pablo.MicroAppStudio01.WebGateway\Pablo.MicroAppStudio01.WebGateway.csproj", "{16767158-A04C-4749-BA09-B4B50322CB29}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{EB7ECC90-394C-4028-B1D3-C103907261BC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "administration", "administration", "{6A9F1CAE-F189-499F-8E04-66DE1CCC288B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.AdministrationService", "services\administration\Pablo.MicroAppStudio01.AdministrationService\Pablo.MicroAppStudio01.AdministrationService.csproj", "{0F3DACFD-D2B5-4725-A99E-EBCDC9050BF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.AdministrationService", "services\administration\Pablo.MicroAppStudio01.AdministrationService\Pablo.MicroAppStudio01.AdministrationService.csproj", "{0F3DACFD-D2B5-4725-A99E-EBCDC9050BF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.AdministrationService.Contracts", "services\administration\Pablo.MicroAppStudio01.AdministrationService.Contracts\Pablo.MicroAppStudio01.AdministrationService.Contracts.csproj", "{83370234-3048-44CB-B27A-F0DF09E9988F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.AdministrationService.Contracts", "services\administration\Pablo.MicroAppStudio01.AdministrationService.Contracts\Pablo.MicroAppStudio01.AdministrationService.Contracts.csproj", "{83370234-3048-44CB-B27A-F0DF09E9988F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.AdministrationService.Tests", "services\administration\Pablo.MicroAppStudio01.AdministrationService.Tests\Pablo.MicroAppStudio01.AdministrationService.Tests.csproj", "{B335AA6B-B5AF-495E-8CE6-02CE6ACCAA75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.AdministrationService.Tests", "services\administration\Pablo.MicroAppStudio01.AdministrationService.Tests\Pablo.MicroAppStudio01.AdministrationService.Tests.csproj", "{B335AA6B-B5AF-495E-8CE6-02CE6ACCAA75}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "audit-logging", "audit-logging", "{32185176-381A-4D71-86A7-1E2C178ED806}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.AuditLoggingService", "services\audit-logging\Pablo.MicroAppStudio01.AuditLoggingService\Pablo.MicroAppStudio01.AuditLoggingService.csproj", "{BD6F9F98-4D20-4A84-92BA-5C1DA19576D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.AuditLoggingService", "services\audit-logging\Pablo.MicroAppStudio01.AuditLoggingService\Pablo.MicroAppStudio01.AuditLoggingService.csproj", "{BD6F9F98-4D20-4A84-92BA-5C1DA19576D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.AuditLoggingService.Contracts", "services\audit-logging\Pablo.MicroAppStudio01.AuditLoggingService.Contracts\Pablo.MicroAppStudio01.AuditLoggingService.Contracts.csproj", "{FA45FFAE-A56E-4CF4-941F-B156062D93CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.AuditLoggingService.Contracts", "services\audit-logging\Pablo.MicroAppStudio01.AuditLoggingService.Contracts\Pablo.MicroAppStudio01.AuditLoggingService.Contracts.csproj", "{FA45FFAE-A56E-4CF4-941F-B156062D93CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.AuditLoggingService.Tests", "services\audit-logging\Pablo.MicroAppStudio01.AuditLoggingService.Tests\Pablo.MicroAppStudio01.AuditLoggingService.Tests.csproj", "{719E72CC-F4FC-4B55-8683-A7442641C1C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.AuditLoggingService.Tests", "services\audit-logging\Pablo.MicroAppStudio01.AuditLoggingService.Tests\Pablo.MicroAppStudio01.AuditLoggingService.Tests.csproj", "{719E72CC-F4FC-4B55-8683-A7442641C1C3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chat", "chat", "{D95EFDF2-970C-429C-8F45-7CB94C7C1B56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.ChatService", "services\chat\Pablo.MicroAppStudio01.ChatService\Pablo.MicroAppStudio01.ChatService.csproj", "{00942DAB-EE2C-4D1B-A8FF-A16528C4C1A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.ChatService", "services\chat\Pablo.MicroAppStudio01.ChatService\Pablo.MicroAppStudio01.ChatService.csproj", "{00942DAB-EE2C-4D1B-A8FF-A16528C4C1A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.ChatService.Contracts", "services\chat\Pablo.MicroAppStudio01.ChatService.Contracts\Pablo.MicroAppStudio01.ChatService.Contracts.csproj", "{708DD15A-3CA6-4177-AEA8-A1953C5F539A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.ChatService.Contracts", "services\chat\Pablo.MicroAppStudio01.ChatService.Contracts\Pablo.MicroAppStudio01.ChatService.Contracts.csproj", "{708DD15A-3CA6-4177-AEA8-A1953C5F539A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.ChatService.Tests", "services\chat\Pablo.MicroAppStudio01.ChatService.Tests\Pablo.MicroAppStudio01.ChatService.Tests.csproj", "{EC792897-CD61-4A49-8894-687CE88B6780}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.ChatService.Tests", "services\chat\Pablo.MicroAppStudio01.ChatService.Tests\Pablo.MicroAppStudio01.ChatService.Tests.csproj", "{EC792897-CD61-4A49-8894-687CE88B6780}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "file-management", "file-management", "{FBD255BD-8484-4A87-BF0F-68BE43BB0C46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.FileManagementService", "services\file-management\Pablo.MicroAppStudio01.FileManagementService\Pablo.MicroAppStudio01.FileManagementService.csproj", "{D0F074F6-189A-4024-AFC4-5197D40F3019}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.FileManagementService", "services\file-management\Pablo.MicroAppStudio01.FileManagementService\Pablo.MicroAppStudio01.FileManagementService.csproj", "{D0F074F6-189A-4024-AFC4-5197D40F3019}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.FileManagementService.Contracts", "services\file-management\Pablo.MicroAppStudio01.FileManagementService.Contracts\Pablo.MicroAppStudio01.FileManagementService.Contracts.csproj", "{FFF34AF1-661C-41D2-B2FB-5201E6003618}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.FileManagementService.Contracts", "services\file-management\Pablo.MicroAppStudio01.FileManagementService.Contracts\Pablo.MicroAppStudio01.FileManagementService.Contracts.csproj", "{FFF34AF1-661C-41D2-B2FB-5201E6003618}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.FileManagementService.Tests", "services\file-management\Pablo.MicroAppStudio01.FileManagementService.Tests\Pablo.MicroAppStudio01.FileManagementService.Tests.csproj", "{D4E80584-48AD-4BCC-9780-D398DABA7E7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.FileManagementService.Tests", "services\file-management\Pablo.MicroAppStudio01.FileManagementService.Tests\Pablo.MicroAppStudio01.FileManagementService.Tests.csproj", "{D4E80584-48AD-4BCC-9780-D398DABA7E7F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "identity", "identity", "{FAAFB11F-F065-46A0-B794-CCB7D3289379}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.IdentityService", "services\identity\Pablo.MicroAppStudio01.IdentityService\Pablo.MicroAppStudio01.IdentityService.csproj", "{DDDB984A-302F-4A84-A368-EB84C29C547E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.IdentityService", "services\identity\Pablo.MicroAppStudio01.IdentityService\Pablo.MicroAppStudio01.IdentityService.csproj", "{DDDB984A-302F-4A84-A368-EB84C29C547E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.IdentityService.Contracts", "services\identity\Pablo.MicroAppStudio01.IdentityService.Contracts\Pablo.MicroAppStudio01.IdentityService.Contracts.csproj", "{21E34229-2E9C-459D-9BB8-8BA4052F5465}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.IdentityService.Contracts", "services\identity\Pablo.MicroAppStudio01.IdentityService.Contracts\Pablo.MicroAppStudio01.IdentityService.Contracts.csproj", "{21E34229-2E9C-459D-9BB8-8BA4052F5465}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.IdentityService.Tests", "services\identity\Pablo.MicroAppStudio01.IdentityService.Tests\Pablo.MicroAppStudio01.IdentityService.Tests.csproj", "{8B370C4C-0311-4B4F-BC48-CBF21BBCE1AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.IdentityService.Tests", "services\identity\Pablo.MicroAppStudio01.IdentityService.Tests\Pablo.MicroAppStudio01.IdentityService.Tests.csproj", "{8B370C4C-0311-4B4F-BC48-CBF21BBCE1AE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "saas", "saas", "{0EE7FF4B-EB5E-4B5F-8A30-B7027C3A1D06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.SaasService", "services\saas\Pablo.MicroAppStudio01.SaasService\Pablo.MicroAppStudio01.SaasService.csproj", "{EA3B4748-8B66-4614-91DE-834898E81652}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.SaasService", "services\saas\Pablo.MicroAppStudio01.SaasService\Pablo.MicroAppStudio01.SaasService.csproj", "{EA3B4748-8B66-4614-91DE-834898E81652}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.SaasService.Contracts", "services\saas\Pablo.MicroAppStudio01.SaasService.Contracts\Pablo.MicroAppStudio01.SaasService.Contracts.csproj", "{FC28D1EA-32A4-4E4B-912C-B5B411E43B8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.SaasService.Contracts", "services\saas\Pablo.MicroAppStudio01.SaasService.Contracts\Pablo.MicroAppStudio01.SaasService.Contracts.csproj", "{FC28D1EA-32A4-4E4B-912C-B5B411E43B8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroAppStudio01.SaasService.Tests", "services\saas\Pablo.MicroAppStudio01.SaasService.Tests\Pablo.MicroAppStudio01.SaasService.Tests.csproj", "{D5E847AF-884B-44CC-9159-7241C0D5ED5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroAppStudio01.SaasService.Tests", "services\saas\Pablo.MicroAppStudio01.SaasService.Tests\Pablo.MicroAppStudio01.SaasService.Tests.csproj", "{D5E847AF-884B-44CC-9159-7241C0D5ED5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pablo.MicroApp01.AppHost", "Pablo.MicroApp01.AppHost\Pablo.MicroApp01.AppHost.csproj", "{E5F94D61-D2B4-4489-804D-8655D03AC0C7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pablo.MicroApp01.ServiceDefaults", "Pablo.MicroApp01.ServiceDefaults\Pablo.MicroApp01.ServiceDefaults.csproj", "{FAA142BA-A494-4F4C-83A0-6B72F8EFF903}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{6C976FE4-ADC6-4C50-9936-68EC31CB0693}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -178,6 +179,17 @@ Global
 		{D5E847AF-884B-44CC-9159-7241C0D5ED5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5E847AF-884B-44CC-9159-7241C0D5ED5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5E847AF-884B-44CC-9159-7241C0D5ED5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5F94D61-D2B4-4489-804D-8655D03AC0C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5F94D61-D2B4-4489-804D-8655D03AC0C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5F94D61-D2B4-4489-804D-8655D03AC0C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5F94D61-D2B4-4489-804D-8655D03AC0C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAA142BA-A494-4F4C-83A0-6B72F8EFF903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAA142BA-A494-4F4C-83A0-6B72F8EFF903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAA142BA-A494-4F4C-83A0-6B72F8EFF903}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAA142BA-A494-4F4C-83A0-6B72F8EFF903}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A9B9F6D5-3BF0-4652-83E5-723E7413F1E7} = {4CE8F2F5-4911-402B-805C-251AF325C710}

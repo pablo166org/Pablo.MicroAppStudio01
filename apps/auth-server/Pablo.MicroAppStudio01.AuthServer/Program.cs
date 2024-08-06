@@ -19,6 +19,8 @@ public class Program
 
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.AddServiceDefaults();
+
             builder.Host
                 .AddAppSettingsSecretsJson()
                 .UseAutofac()
@@ -55,6 +57,8 @@ public class Program
             await builder.AddApplicationAsync<MicroAppStudio01AuthServerModule>();
 
             var app = builder.Build();
+
+            app.MapDefaultEndpoints();
 
             await app.InitializeApplicationAsync();
             await app.RunAsync();
